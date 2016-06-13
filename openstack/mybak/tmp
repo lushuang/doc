@@ -1,0 +1,50 @@
+﻿deb http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ trusty-proposed main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ trusty-updates main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ trusty-proposed main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe multiverse
+
+
+deb http://mirror.bjtu.edu.cn/ubuntu/ trusty universe restricted multiverse main
+deb http://mirror.bjtu.edu.cn/ubuntu/ trusty-security universe restricted multiverse main
+deb http://mirror.bjtu.edu.cn/ubuntu/ trusty-updates universe restricted multiverse main
+deb http://mirror.bjtu.edu.cn/ubuntu/ trusty-proposed universe restricted multiverse main
+deb http://mirror.bjtu.edu.cn/ubuntu/ trusty-backports universe restricted multiverse main
+
+
+liberty
+
+https://github.com/openstack-dev/devstack.git
+https://github.com/openstack-dev/devstack.git
+
+ ConnectionError: HTTPSConnectionPool(host='pypi.python.org', port=443): Max retries exceeded with url: /packages/2.7/t/testscenarios/testscenarios-0.5.0-py2.py3-none-any.whl (Caused by ProtocolError('Connection aborted.', error(111, 'Connection refused')))
+ 
+ 
+  Installing test-requirements for /opt/stack/requirements/test-requirements.txt
+2015-12-26 08:23:16.802 | + env http_proxy= https_proxy= no_proxy= PIP_FIND_LINKS= /opt/stack/requirements/.venv/bin/pip install -c /opt/stack/requirements/upper-constraints.txt -r /opt/stack/requirements/test-requirements.txt
+
+
+127.0.0.1       localhost
+127.0.1.1       ubuntu
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+
+
+2015-12-26 13:08:55.999 | + sudo ip addr add 172.24.4.1/24 dev br-ex
+2015-12-26 13:08:56.011 | + sudo ip link set br-ex up
+2015-12-26 13:08:56.022 | ++ awk -F '"' -v subnet_id=b1682ef8-ff1e-4e36-848e-1099e4ebfe1b '$4 == subnet_id { print $8; }'
+2015-12-26 13:08:56.024 | ++ grep router_gateway
+2015-12-26 13:08:56.026 | ++ neutron port-list -c fixed_ips -c device_owner
+2015-12-26 13:08:56.779 | + ROUTER_GW_IP=172.24.4.2
+2015-12-26 13:08:56.779 | + die_if_not_set 1317 ROUTER_GW_IP 'Failure retrieving ROUTER_GW_IP'
+2015-12-26 13:08:56.779 | + local exitcode=0
+2015-12-26 13:08:56.787 | + sudo ip route replace 10.0.0.0/24 via 172.24.4.2
